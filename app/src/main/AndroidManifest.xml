@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.a40002778.myapplication">
+
+    <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".demos.MainActivity">
+
+        </activity>
+        <activity android:name=".demos.FragmentViewModelActivity">
+        </activity>
+        <activity
+                android:name=".ui.home.HomeActivity"
+                android:label="@string/title_activity_home">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".demos.ScrollingActivity"
+                android:label="@string/title_activity_scrolling"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name=".demos.Main2Activity"
+                android:label="@string/title_activity_main2"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name=".demos.ItemListActivity"
+                android:label="@string/title_item_list"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name=".demos.ItemDetailActivity"
+                android:label="@string/title_item_detail"
+                android:parentActivityName=".demos.ItemListActivity"
+                android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.example.a40002778.myapplication.demos.ItemListActivity"/>
+        </activity>
+    </application>
+
+</manifest>
