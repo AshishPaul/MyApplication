@@ -10,12 +10,11 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".demos.MainActivity">
-
         </activity>
         <activity android:name=".demos.FragmentViewModelActivity">
         </activity>
         <activity
-                android:name=".ui.home.HomeActivity"
+                android:name="com.example.a40002778.myapplication.ui.modules.home.HomeActivity"
                 android:label="@string/title_activity_home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -46,6 +45,10 @@
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
                     android:value="com.example.a40002778.myapplication.demos.ItemListActivity"/>
+        </activity>
+        <activity
+                android:name=".demos.Main3Activity"
+                android:label="@string/title_activity_main3">
         </activity>
     </application>
 

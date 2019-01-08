@@ -17,6 +17,9 @@ inline fun FragmentActivity.setFragment(containerViewId: Int, f: () -> Fragment)
     return f().apply { manager?.beginTransaction()?.add(containerViewId, this)?.commit() }
 }
 
-inline fun FragmentActivity.replaceFragment(containerViewId: Int, f: () -> Fragment): Fragment? {
-    return f().apply { supportFragmentManager?.beginTransaction()?.replace(containerViewId, this)?.commit() }
+inline fun FragmentActivity.addOrReplaceFragment(containerViewId: Int, f: () -> Fragment): Fragment? {
+    val manager = supportFragmentManager
+    val fragment = manager?.findFragmentByTag(f().tag)
+    fragment?.let { return it }
+    return f().apply { manager?.beginTransaction()?.replace(containerViewId, this, this.tag)?.addToBackStack(this.tag)?.commit() }
 }

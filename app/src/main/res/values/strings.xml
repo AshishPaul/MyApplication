@@ -3,7 +3,7 @@
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_clans">Clans</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_settings">Settings</string>
     <string name="title_activity_scrolling">ScrollingActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -98,4 +98,7 @@
     <string name="title_activity_main2">Main2Activity</string>
     <string name="title_item_list">Items</string>
     <string name="title_item_detail">Item Detail</string>
+    <string name="title_activity_main3">Main3Activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

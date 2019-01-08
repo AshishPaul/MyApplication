@@ -7,7 +7,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.home.HomeActivity">
+        tools:context=".ui.modules.home.HomeActivity">
 
     <android.support.design.widget.AppBarLayout
             android:layout_height="wrap_content"
@@ -37,5 +37,5 @@
             android:layout_height="?attr/actionBarSize"
             android:layout_gravity="bottom"
             android:background="?android:attr/windowBackground"
-            app:menu="@menu/navigation"/>
+            app:menu="@menu/home_bottom_navigation_menu"/>
 </android.support.design.widget.CoordinatorLayout>
