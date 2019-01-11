@@ -5,13 +5,17 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import com.example.a40002778.myapplication.R
+import com.example.a40002778.myapplication.data.model.Clan
 import com.example.a40002778.myapplication.ui.modules.clans.ClanListFragment
 import com.example.a40002778.myapplication.ui.modules.dashboard.DashboardFragment
 import com.example.a40002778.myapplication.ui.modules.settings.SettingsFragment
 import jp.wasabeef.util.ext.addOrReplaceFragment
 import kotlinx.android.synthetic.main.activity_home.*
 
-class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
+class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener,ClanListFragment.ClanListFragmentInteractionListener {
+    override fun onListFragmentInteraction(item: Clan?) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {

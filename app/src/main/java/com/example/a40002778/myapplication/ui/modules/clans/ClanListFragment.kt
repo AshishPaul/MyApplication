@@ -1,6 +1,7 @@
 package com.example.a40002778.myapplication.ui.modules.clans
 
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
@@ -11,11 +12,14 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.example.a40002778.myapplication.R
+import com.example.a40002778.myapplication.data.model.Clan
+import com.example.a40002778.myapplication.ui.components.EmptyViewClickListener
+import com.example.a40002778.myapplication.ui.components.ListItemClickListener
 
 class ClanListFragment : Fragment() {
 
     private var columnCount = 1
-
+    private var listener: ClanListFragmentInteractionListener? = null
     companion object {
         const val ARG_COLUMN_COUNT = "column-count"
         @JvmStatic
@@ -46,7 +50,11 @@ class ClanListFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context,columnCount)
                 }
-                adapter = MyItemRecyclerViewAdapter(DummyContent.ITEMS, listener)
+                adapter = ClanListRecyclerAdapter(listOf(
+                    Clan(1,"one"),
+                    Clan(2, "Two"),
+                    Clan(3, "Three")
+                ),listener)
             }
         }
         return view
@@ -56,6 +64,24 @@ class ClanListFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(ClanListViewModel::class.java)
         // TODO: Use the ViewModel
+    }
+
+    interface ClanListFragmentInteractionListener {
+        fun onListFragmentInteraction(item: Clan?)
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is ClanListFragmentInteractionListener) {
+            listener = context
+        } else {
+            throw RuntimeException(context.toString() + " must implement OnListFragmentInteractionListener")
+        }
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        listener = null
     }
 
 }
